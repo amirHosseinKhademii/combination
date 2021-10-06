@@ -1,37 +1,15 @@
-import { FC, memo } from 'react'
-import { LoaidngBounce } from 'components/loading/bounce'
-import { classNames } from 'utils/classes'
+import { FC } from 'react'
+import { classNames } from 'utils'
 
-export const Button: FC<IButton> = memo(
-  ({
-    className,
-    children,
-    onClick,
-    disabled,
-    type,
-    icon,
-    loading,
-    onMouseEnter,
-    onMouseLeave,
-    id,
-  }): JSX.Element => {
-    return (
-      <button
-        data-testid={id}
-        type={type}
-        onClick={onClick}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        disabled={disabled || loading}
-        className={classNames(
-          'flex items-center justify-center transition rounded focus:outline-none  disabled:opacity-50 ',
-          className,
-          !icon && 'shadow',
-          loading && 'cursor-wait '
-        )}
-      >
-        {loading ? <LoaidngBounce /> : children}
-      </button>
-    )
-  }
+export const Button: FC<IButton> = ({ fetching, children, onClick }) => (
+  <button
+    className={classNames(
+      'px-6 h-10 bg-indigo-400 hover:opacity-80 rounded text-white',
+      fetching && 'cursor-wait'
+    )}
+    onClick={onClick}
+    disabled={fetching}
+  >
+    {fetching ? 'Loading ...' : children}
+  </button>
 )

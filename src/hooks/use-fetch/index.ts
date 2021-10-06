@@ -33,6 +33,7 @@ export const useFetch = ({ service }: IUseService): IUseServieOutput => {
     } catch (error) {
       setState((prev) => ({
         ...prev,
+        error,
         loading: false,
         fetching: false,
       }))

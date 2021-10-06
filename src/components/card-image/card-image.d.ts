@@ -1,6 +1,5 @@
-interface IInput {
-  value?: string
-  label?: string
+interface ICardImage {
+  src?: string
   loading?: boolean
   fetching?: boolean
   isNew?: boolean
