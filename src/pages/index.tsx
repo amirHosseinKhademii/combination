@@ -1,9 +1,9 @@
-import { Button } from 'components/button'
-import { Card } from 'components/card'
 import { useMemo } from 'react'
 import { useFetch } from 'hooks/use-fetch'
+import { Card } from 'components/card'
 import { CardBody } from 'components/card-body'
 import { CardImage } from 'components/card-image'
+import { Button } from 'components/button'
 import { Input } from 'components/input'
 
 import { getUser as service } from 'services/placeholder'

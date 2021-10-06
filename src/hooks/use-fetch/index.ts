@@ -9,7 +9,7 @@ export const useFetch = ({ service }: IUseService): IUseServieOutput => {
     fetching: false,
   })
 
-  const fetcher = useCallback(async ({ cached }: { cached: boolean }) => {
+  const fetcher = useCallback(async (cached?: boolean) => {
     if (cached)
       setState((prev) => ({
         ...prev,
@@ -41,11 +41,11 @@ export const useFetch = ({ service }: IUseService): IUseServieOutput => {
   }, [])
 
   useEffect(() => {
-    fetcher({ cached: false })
+    fetcher()
   }, [])
 
   return {
     ...state,
-    refetch: () => fetcher({ cached: true }),
+    refetch: () => fetcher(true),
   }
 }
