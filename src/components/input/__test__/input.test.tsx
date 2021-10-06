@@ -1,27 +1,21 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { Input } from '..'
 
 describe('Input core', () => {
   it('Should render properly', () => {
-    render(<Input />)
-    const element = screen.getByTestId('input-core')
+    render(<Input label="name" value="test value" />)
+    const element = screen.getByTestId('name')
     expect(element).toBeInTheDocument()
+    expect(element).toHaveValue('test value')
   })
-  it('Should render properly with placeholder', () => {
-    render(<Input placeholder="password" />)
-    const element = screen.getByPlaceholderText('password')
-    expect(element).toBeVisible()
+  it('Should render loading properly', () => {
+    render(<Input label="name" value="test value" loading />)
+    const element = screen.getByTestId('name')
+    expect(element).toHaveClass('animate-pulse')
   })
-  it('Should render properly with error', () => {
-    render(<Input error="Error" />)
-    const element = screen.getByTestId('input-core')
-    expect(element.className).toContain('border-red-400')
-  })
-
-  it('Should change properly', () => {
-    render(<Input />)
-    const element = screen.getByTestId('input-core') as any
-    fireEvent.change(element, { target: { value: 'changed' } })
-    expect(element.value).toBe('changed')
+  it('Should render highlight properly', () => {
+    render(<Input label="name" value="test value" isNew />)
+    const element = screen.getByTestId('name')
+    expect(element).toHaveClass('bg-blue-300 shadow-lg')
   })
 })

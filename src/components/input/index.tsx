@@ -8,6 +8,7 @@ export const Input: FC<IInput> = ({ value, label, loading, isNew }) => {
   return (
     <div className="w-full flex flex-col space-y-2">
       <label
+        htmlFor={label}
         className={classNames(
           'text-sm text-gray-600',
           loading && 'h-6 animate-pulse'
@@ -16,7 +17,9 @@ export const Input: FC<IInput> = ({ value, label, loading, isNew }) => {
         {label}
       </label>
       <input
+        data-testid={label}
         disabled
+        id={label}
         className={classNames(
           ' h-10 w-full rounded text-gray-700 px-4',
           loading && 'animate-pulse',
