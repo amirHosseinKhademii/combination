@@ -9,7 +9,11 @@ export const Router = memo((): JSX.Element => {
       <Layout>
         <Suspense fallback={<Skeleton />}>
           <Switch>
-            <Route exact path="/" component={lazy(() => import('pages'))} />
+            <Route
+              exact
+              path="/"
+              component={lazy(() => import('pages/user'))}
+            />
           </Switch>
         </Suspense>
       </Layout>

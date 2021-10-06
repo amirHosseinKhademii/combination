@@ -25,7 +25,7 @@ export const Input: FC<IInput> = ({ value, label, loading, isNew }) => {
           loading && 'animate-pulse',
           highLight ? '  bg-blue-300 shadow-lg ' : 'bg-gray-300'
         )}
-        value={value}
+        value={value || ''}
       />
     </div>
   )
