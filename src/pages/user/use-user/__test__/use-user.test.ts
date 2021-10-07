@@ -18,7 +18,7 @@ describe('Use user hook', () => {
     expect(service).toHaveBeenCalledTimes(1)
     expect(result.current.data).toBe(mockData)
   })
-  it('Should refetch proper data and catch the diff between email and img', async () => {
+  it('Should refetch proper data and catch the diff between country and img', async () => {
     service.mockResolvedValueOnce(mockData)
     const { result, waitFor, waitForNextUpdate } = renderHook(() => useUser())
     await waitFor(() => !result.current.loading)
@@ -32,7 +32,7 @@ describe('Use user hook', () => {
     expect(result.current.cache).toBe(mockData)
     expect(result.current.data).toBe(mockNewData)
     expect(result.current.isNew).toStrictEqual({
-      email: true,
+      country: true,
       first: false,
       img: true,
       last: false,

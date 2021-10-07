@@ -9,7 +9,7 @@ const service = getUser as any
 jest.mock('services/placeholder')
 
 describe('User view', () => {
-  it('Should render proper data and refetch and highlight properly after change the picture and email', async () => {
+  it('Should render proper data and refetch and highlight properly after change the picture and country', async () => {
     service.mockResolvedValueOnce(mockData)
     render(<View />)
     const btn = screen.getByRole('button')
@@ -24,7 +24,7 @@ describe('User view', () => {
     expect(btn).toHaveTextContent('Loading ...')
     await waitFor(() => btn.textContent !== 'Loading ...')
     expect(screen.getByTestId('card-image')).toHaveClass('shadow-3xl-blue')
-    expect(screen.getByTestId('Email')).toHaveClass('shadow-3xl-blue')
+    expect(screen.getByTestId('Country')).toHaveClass('shadow-3xl-blue')
     expect(screen.getByTestId('First name')).not.toHaveClass('shadow-3xl-blue')
     expect(screen.getByTestId('Last name')).not.toHaveClass('shadow-3xl-blue')
     expect(btn).toHaveTextContent('New user')

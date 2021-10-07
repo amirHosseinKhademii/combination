@@ -34,9 +34,9 @@ const View = () => {
         <Input
           loading={loading}
           fetching={fetching}
-          isNew={isNew.email}
-          value={data?.results[0].email}
-          label="Email"
+          isNew={isNew.country}
+          value={data?.results[0].location.country}
+          label="Country"
         />
         <Button onClick={() => refetch()} fetching={fetching}>
           New user
