@@ -2,7 +2,11 @@ import { useHighlight } from 'hooks/use-highlight'
 import { FC } from 'react'
 import { classNames } from 'utils'
 
-export const CardImage: FC<ICardImage> = ({ src, loading, isNew }) => {
+export const CardImage: FC<ICardImage> = ({
+  src,
+  loading,
+  isNew,
+}): JSX.Element => {
   const { highLight } = useHighlight(isNew, src)
 
   if (loading)

@@ -5,15 +5,17 @@ interface IUseService {
 
 interface IUseServiceState {
   data: any
-  loading: boolean
+  cache: any
   error: any
+  loading: boolean
+  fetching: boolean
 }
 
 interface IUseServieOutput {
   data: any
   error: any
   loading: boolean
-  fetching?: boolean
-  cache?: any
+  fetching: boolean
+  cache: any
   refetch?: Function
 }

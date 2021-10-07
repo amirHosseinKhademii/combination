@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
-export const useHighlight = (isNew, value) => {
-  const [highLight, setHighLight] = useState(false)
+export const useHighlight = (isNew, value): { highLight: boolean } => {
+  const [highLight, setHighLight] = useState<boolean>(false)
 
   useEffect(() => {
     if (isNew) setHighLight(true)

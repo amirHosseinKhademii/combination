@@ -1,15 +1,6 @@
-import { FC, useMemo } from 'react'
+const circleCommonClasses = 'h-6 w-6 bg-gray-600 rounded-full'
 
-export const LoaidngBounce: FC<{ size?: 'small' | 'large' }> = ({
-  size = 'small',
-}) => {
-  const circleCommonClasses = useMemo(
-    () =>
-      size === 'large'
-        ? 'h-6 w-6 bg-gray-600 rounded-full'
-        : 'h-2 w-2 bg-gray-300 rounded-full',
-    [size]
-  )
+export const LoaidngBounce = (): JSX.Element => {
   return (
     <div className="flex" data-testid="loading-bounce">
       <div className={`${circleCommonClasses} mr-1 animate-bounce`}></div>

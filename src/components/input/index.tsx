@@ -2,7 +2,12 @@ import { useHighlight } from 'hooks/use-highlight'
 import { FC } from 'react'
 import { classNames } from 'utils'
 
-export const Input: FC<IInput> = ({ value, label, loading, isNew }) => {
+export const Input: FC<IInput> = ({
+  value,
+  label,
+  loading,
+  isNew,
+}): JSX.Element => {
   const { highLight } = useHighlight(isNew, value)
 
   return (

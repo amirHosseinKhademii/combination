@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 
 export const useFetch = ({ service }: IUseService): IUseServieOutput => {
-  const [state, setState] = useState({
+  const [state, setState] = useState<IUseServiceState>({
     data: undefined,
     cache: undefined,
     error: undefined,

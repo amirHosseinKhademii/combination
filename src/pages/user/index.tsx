@@ -5,7 +5,7 @@ import { Button } from 'components/button'
 import { Input } from 'components/input'
 import { useUser } from './use-user'
 
-const View = () => {
+const View = (): JSX.Element => {
   const { data, loading, fetching, isNew, refetch } = useUser()
 
   return (
