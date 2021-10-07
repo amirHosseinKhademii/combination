@@ -18,8 +18,8 @@ export const CardImage: FC<ICardImage> = ({ src, loading, isNew }) => {
       alt="image"
       data-testid="card-image"
       className={classNames(
-        'w-64 h-64 object-contain object-center rounded-full',
-        highLight && 'border-[8px] border-blue-300 shadow-lg'
+        'w-64 h-64 object-contain object-center rounded-full transition-colors duration-1100 ease-in-out',
+        highLight && 'border-[8px] border-blue-300 shadow-3xl-blue'
       )}
     />
   )

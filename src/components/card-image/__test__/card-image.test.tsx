@@ -17,6 +17,6 @@ describe('CardImage component', () => {
   it('Should highlight properly', () => {
     render(<CardImage src="test" isNew />)
     const img = screen.getByTestId('card-image')
-    expect(img).toHaveClass('border-[8px] border-blue-300 shadow-lg')
+    expect(img).toHaveClass('border-[8px] border-blue-300 shadow-3xl-blue')
   })
 })

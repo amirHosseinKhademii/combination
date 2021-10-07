@@ -21,9 +21,9 @@ export const Input: FC<IInput> = ({ value, label, loading, isNew }) => {
         disabled
         id={label}
         className={classNames(
-          ' h-10 w-full rounded text-gray-700 px-4',
+          ' h-10 w-full rounded text-gray-700 px-4 transition-colors duration-1100 ease-in-out',
           loading && 'animate-pulse',
-          highLight ? '  bg-blue-300 shadow-lg ' : 'bg-gray-300'
+          highLight ? 'bg-blue-300 shadow-3xl-blue' : 'bg-gray-200'
         )}
         value={value || ''}
       />

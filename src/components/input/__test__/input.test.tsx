@@ -16,6 +16,6 @@ describe('Input core', () => {
   it('Should render highlight properly', () => {
     render(<Input label="name" value="test value" isNew />)
     const element = screen.getByTestId('name')
-    expect(element).toHaveClass('bg-blue-300 shadow-lg')
+    expect(element).toHaveClass('bg-blue-300 shadow-3xl-blue')
   })
 })
