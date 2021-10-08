@@ -1,21 +1,20 @@
 interface IUseService {
   service: Function
-  onSuccess?: Function
 }
 
-interface IUseServiceState {
-  data: any
-  cache: any
+interface IUseServiceState<T> {
+  data: T
+  cache: T
   error: any
   loading: boolean
   fetching: boolean
 }
 
-interface IUseServieOutput {
-  data: any
+interface IUseServieOutput<T> {
+  data: T
+  cache: T
   error: any
   loading: boolean
   fetching: boolean
-  cache: any
-  refetch?: Function
+  refetch?: () => void
 }

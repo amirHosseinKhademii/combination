@@ -1,13 +1,15 @@
 import { useCallback, useEffect, useState } from 'react'
 
-export const useFetch = ({ service }: IUseService): IUseServieOutput => {
-  const [state, setState] = useState<IUseServiceState>({
-    data: undefined,
-    cache: undefined,
-    error: undefined,
-    loading: false,
-    fetching: false,
-  })
+const initialState = {
+  data: undefined,
+  cache: undefined,
+  error: undefined,
+  loading: false,
+  fetching: false,
+}
+
+export const useFetch = <T>({ service }: IUseService): IUseServieOutput<T> => {
+  const [state, setState] = useState<IUseServiceState<T>>(initialState)
 
   const fetcher = useCallback(async (cached?: boolean) => {
     if (cached)
@@ -42,6 +44,7 @@ export const useFetch = ({ service }: IUseService): IUseServieOutput => {
 
   useEffect(() => {
     fetcher()
+    return () => setState(initialState)
   }, [])
 
   return {
